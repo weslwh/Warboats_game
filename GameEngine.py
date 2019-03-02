@@ -3,7 +3,7 @@
 PLACING_PHASE = 'placing'
 PLAYING_PHASE = 'playing'
 
-class Game_Engine:
+class GameEngine:
     '''
     Game_Engine class to represent game logic of the Warboats game.
     
