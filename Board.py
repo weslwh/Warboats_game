@@ -1,22 +1,22 @@
-class board:
+class Board:
     """
     Represent the cooordinates function to the UI for display
     """
-    def __init__(self, x:str, y:int, game_engine:object):
+    def __init__(self, h_dimension:str, v_dimension:int, game_engine:object):
         """
         Initial the attributes x 
         """
-        self.x = x
-        self.y = y
+        self.h_dimension = h_dimension
+        self.v_dimension = v_dimension
         self.hit_coordinates = []
         self.miss_coordinates = []
         self.game_engine = game_engine
         
     def is_valid_cooridinate(self, c: coordinate):
         """
-        Return True if the cooridinate is valid, otherwise return False
+        Return True if the cooridinate is in the range of the board's coordinates, otherwise return False
         """
-        if (c.get_letter() in self.x) and (c.get_number() in self.y):
+        if (c.get_letter() in self.h_dimension) and (c.get_number() in self.v_dimension):
                 return True
         return False
         
@@ -40,13 +40,13 @@ class board:
         if not guess_position():
             self.miss_coordinates.append(c)
 
-    def get_misses(c:coordinate):
+    def get_misses(c: coordinate):
         """
         Return the list of miss
         """
         return self.hit_coordinate()
 
-    def guess_coordinate(c:coordinate):
+    def guess_coordinate(c: coordinate):
         """
         input player guess coordinate to the game engine
         """
