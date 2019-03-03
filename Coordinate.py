@@ -13,3 +13,6 @@ class Coordinate:
     #Return the number
     def get_number():
         return self.numbercord
+
+    def get_array():
+        return [self.lettercord, self.numbercord]

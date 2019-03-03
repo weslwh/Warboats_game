@@ -7,7 +7,7 @@ class ShipFactory:
 	def build(typ, coordinate):
 		s = Ship()
 		s.set_ship_coordinates(coordinate)
-		s.set_type()
+		s.set_type(typ)
 		return s
 	
 	
