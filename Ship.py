@@ -1,6 +1,6 @@
 import Coordinate.py
 
-class ship:
+class Ship:
     """
     An object representation of a ship
     """
@@ -22,8 +22,9 @@ class ship:
         """
         Returns true if pos matches the ship's coordinates
         """
-        if (self.position == pos):
-            return True
+        for i in position:
+            if i = pos:
+                return True
         
         return False
 
