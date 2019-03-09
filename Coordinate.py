@@ -1,5 +1,3 @@
-
-
 class Coordinate:
     """
     The Coordinate class is used to represent a position on 
