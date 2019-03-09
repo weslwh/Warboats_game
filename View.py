@@ -23,25 +23,43 @@ clock = pygame.time.Clock()
 HEIGHT = 20
 WIDTH = 20
 MARGIN = 5
-while not done:
-    
-    grid = [[0 for x in range(10)] for y in range(10)]
+grid = [[0 for x in range(10)] for y in range(10)]
 
-    pygame.display.update()
+while not done:
+
+    #pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            print("yoube pushed a button")
+            # User clicks the mouse. Get the position
+            pos = pygame.mouse.get_pos()
+            # Change the x/y screen coordinates to grid coordinates
+            column = pos[0] // (WIDTH + MARGIN)
+            row = pos[1] // (HEIGHT + MARGIN)
+            # Set that location to one
+            grid[row][column] = 1
+            print("Click ", pos, "Grid coordinates: ", row, column)
             
-        #Game logic should go here
+    #Game logic should go here
         
         
-        screen.fill(WHITE)
-        #pygame.display.flip()
+    screen.fill(BLACK)
+    #pygame.display.flip()
+    for row in range(10):
+        for column in range(10):
+            color = WHITE
+            if grid[row][column] == 1:
+                color = GREEN
+            pygame.draw.rect(screen,
+                                 color,
+                                 [(MARGIN + WIDTH) * column + MARGIN,
+                                  (MARGIN + HEIGHT) * row + MARGIN,
+                                  WIDTH,
+                                  HEIGHT])        
         
         clock.tick(60)
-        
+        pygame.display.flip()
         
         
 pygame.quit()       
