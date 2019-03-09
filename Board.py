@@ -5,12 +5,12 @@ class Board:
 
     Methods:
         __init__(self, h_dimension:str, v_dimension:int, game_engine:object)
-        is_valid_cooridinate(self, c: coordinate)
-        add_hits(self, c: coordinate)
+        is_valid_cooridinate(self, coordinate)
+        add_hits(self, coordinate)
         get_hits()
-        add_miss(c: coordinate)
-        get_misses(c: coordinate)
-        guess_coordinate(c: coordinate)
+        add_miss(coordinate)
+        get_misses(coordinate)
+        guess_coordinate(coordinate)
     """
     
     def __init__(self, h_dimension, v_dimension, game_engine):
