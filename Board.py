@@ -50,7 +50,8 @@ class Board:
         Raises:
             void
         """
-        if (c.get_letter() in self.h_dimension) and (c.get_number() in self.v_dimension):
+        if (coordinate.get_letter() in self.h_dimension) and \
+           (coordinate.get_number() in self.v_dimension):
                 return True
         return False
         
