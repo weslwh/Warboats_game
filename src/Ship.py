@@ -7,7 +7,11 @@ class Ship:
     if the ship has been sunk in the Warboats game.
     
     Methods:
-    
+        __init__(self)
+        get_ship_coordinates(self)
+        guess_position(self, pos)
+        set_ship_coordinate(self, pos)
+        is_sunk(self)
     """
     
     def __init__(self):

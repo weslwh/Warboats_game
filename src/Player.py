@@ -15,7 +15,7 @@ class Player:
         """
         Initializes the player class with a given list of ship objects
 
-        Args:           Boolean():
+        Args:
             void
 
         Returns:
@@ -54,7 +54,7 @@ class Player:
             void
 
         Returns:
-            void
+            List[Ship]: return list of ships for self object
 
         Raises:
             void
