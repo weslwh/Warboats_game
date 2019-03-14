@@ -46,8 +46,9 @@ class Ship:
       
     def guess_position(self, pos):
         """
-        Guesses a position against this Ship, returns true if the coordinate guessed
-            is a coordinate comprisiing the ship's position.
+        Guesses a position against this Ship, returns true if the
+        coordinate guessed is a coordinate comprisiing the ship's
+        position.
         
         Args:
         pos (Coordinate): The coordinate to be guessed.
