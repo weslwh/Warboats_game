@@ -59,7 +59,7 @@ class Ship:
             void
         """
         for i in position:
-            if i = pos:
+            if i == pos:
                 return True
         
         return False
