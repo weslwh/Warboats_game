@@ -35,8 +35,8 @@ while not done:
             # User clicks the mouse. Get the position
             pos = pygame.mouse.get_pos()
             # Change the x/y screen coordinates to grid coordinates
-            column = pos[0] // (WIDTH + MARGIN)
-            row = pos[1] // (HEIGHT + MARGIN)
+            column = (pos[0] // (WIDTH + MARGIN)) + 1
+            row = (pos[1] // (HEIGHT + MARGIN)) + 1
             # Set that location to one
             grid[row][column] = 1
             print("Click ", pos, "Grid coordinates: ", row, column)
@@ -53,8 +53,8 @@ while not done:
                 color = GREEN
             pygame.draw.rect(screen,
                                  color,
-                                 [(MARGIN + WIDTH) * column + MARGIN,
-                                  (MARGIN + HEIGHT) * row + MARGIN,
+                                 [(MARGIN + WIDTH) * (column - 1) + MARGIN,
+                                  (MARGIN + HEIGHT) * (row - 1) + MARGIN,
                                   WIDTH,
                                   HEIGHT])        
         
