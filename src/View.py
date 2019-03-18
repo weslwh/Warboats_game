@@ -20,26 +20,20 @@ RED = (255, 0, 0)
 WIDTH = 20
 HEIGHT = 20
 
-# This sets the margin between each cell
 MARGIN = 5
- 
-# Create a 2 dimensional array. A two dimensional
-# array is simply a list of lists.
+
 grid = []
 grid2 = []
 for row in range(10):
-    # Add an empty array that will hold each cell
-    # in this row
+
     grid.append([])
     grid2.append([])
     for column in range(10):
-        grid[row].append(0)  # Append a cell
+        grid[row].append(0)  
         grid2[row].append(0)
- 
-# Initialize pygame
+
 pygame.init()
- 
-# Set the HEIGHT and WIDTH of the screen
+font = pygame.font.Font(None, 25)
 WINDOW_SIZE = [720, 600]
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
@@ -47,35 +41,31 @@ pygame.display.set_caption("Warboats")
 
 done = False
  
-# Used to manage how fast the screen updates
 clock = pygame.time.Clock()
- 
 
+framecount = 0
+framerate = 60
+lasttime = 0
+minutes = 0
+seconds = 0
 while not done:
-    for event in pygame.event.get():  # User did something
-        if event.type == pygame.QUIT:  # If user clicked close
-            done = True  # Flag that we are done so we exit this loop
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT:  
+            done = True 
         elif event.type == pygame.MOUSEBUTTONDOWN:
-            # User clicks the mouse. Get the position
             pos = pygame.mouse.get_pos()
-            # Change the x/y screen coordinates to grid coordinates
             column = pos[0] // ((HEIGHT + MARGIN))
             row = pos[1] // ((HEIGHT + MARGIN))
-            # Set that location to one
             if (pos[1] > 250):
-
-                row = row - 12
-                
+                row = row - 12  
                 grid2[row][column] = 1
+                
             elif (pos[1] < 250):
-
                 grid[row][column] = 1
             print("Click ", pos, "Grid coordinates: ", row, column)
  
-    # Set the screen background
     screen.fill(BLACK)
- 
-    # Draw the grid
+
     for row in range(10):
         for column in range(10):
             color = WHITE
@@ -90,9 +80,27 @@ while not done:
             pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
         
     # Limit to 60 frames per second
-    clock.tick(60)
+    time = pygame.time.get_ticks
+
+    #This code gets the time and prints it
+    totalseconds = framecount // framerate
+    minutes  = totalseconds // 60
+    seconds = totalseconds % 60
+    framecount += 1
+    outputs = "Time: {0:02}:{1:02}".format(minutes, seconds)
+    text = font.render(outputs, True, WHITE)
+    screen.blit(text, [250, 250])
  
-    # Go ahead and update the screen with what we've drawn.
+    if (lasttime != seconds):
+        print(totalseconds)
+        print(minutes)
+        lasttime = seconds
+    clock.tick(60)
+
+
+
+
+
     pygame.display.flip()
  
 # Be IDLE friendly. If you forget this line, the program will 'hang'
