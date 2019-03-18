@@ -29,6 +29,7 @@ class Ship:
         """
         self.position = []
         self.sunk = False
+        self.type = ""
         
 
     def get_ship_coordinates(self):
@@ -84,6 +85,23 @@ class Ship:
             void
         """
         self.position = pos
+
+    def set_type(self, ship_type):
+        """
+        Changes the ship's object type into one of four types:
+        - Battleship
+        - Cruiser
+        - Frigate
+        - Minesweeper
+
+        Args:
+            ship_type (String): The type of ship to be set to
+
+        Returns:
+            void
+        """
+
+        self.type = ship_type
         
 
     def is_sunk(self):
