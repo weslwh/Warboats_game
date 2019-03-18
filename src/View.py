@@ -63,8 +63,12 @@ while not done:
             row = pos[1] // ((HEIGHT + MARGIN))
             # Set that location to one
             if (pos[1] > 250):
+
+                row = row - 12
+                
                 grid2[row][column] = 1
             elif (pos[1] < 250):
+
                 grid[row][column] = 1
             print("Click ", pos, "Grid coordinates: ", row, column)
  
@@ -81,6 +85,7 @@ while not done:
                 color = GREEN
                 pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
             elif grid2[row][column] == 1:
+                color = GREEN
                 pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
             pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
         
