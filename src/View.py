@@ -59,10 +59,13 @@ while not done:
             # User clicks the mouse. Get the position
             pos = pygame.mouse.get_pos()
             # Change the x/y screen coordinates to grid coordinates
-            column = pos[0] // ((WIDTH + MARGIN))
+            column = pos[0] // ((HEIGHT + MARGIN))
             row = pos[1] // ((HEIGHT + MARGIN))
             # Set that location to one
-            grid2[row][column] = 1
+            if (pos[1] > 250):
+                grid2[row][column] = 1
+            elif (pos[1] < 250):
+                grid[row][column] = 1
             print("Click ", pos, "Grid coordinates: ", row, column)
  
     # Set the screen background
@@ -72,12 +75,15 @@ while not done:
     for row in range(10):
         for column in range(10):
             color = WHITE
-            if grid[row][column] == 1:
-                color = GREEN
             pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
             pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
+            if grid[row][column] == 1:
+                color = GREEN
+                pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
+            elif grid2[row][column] == 1:
+                pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
             pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
-            
+        
     # Limit to 60 frames per second
     clock.tick(60)
  
