@@ -45,10 +45,12 @@ clock = pygame.time.Clock()
 
 framecount = 0
 framerate = 60
-lasttime = 0
 minutes = 0
 seconds = 0
+last_column = 0
+last_row = 0
 while not done:
+    valid_click = 0
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:  
             done = True 
@@ -56,28 +58,51 @@ while not done:
             pos = pygame.mouse.get_pos()
             column = pos[0] // ((HEIGHT + MARGIN))
             row = pos[1] // ((HEIGHT + MARGIN))
-            if (pos[1] > 250):
+            valid_click = 0
+            if (pos[1] > 250 and pos[0] < 250):
+                valid_click = 1
                 row = row - 12  
                 grid2[row][column] = 1
+                last_column = column
+                last_row = row
                 
-            elif (pos[1] < 250):
+            elif (pos[1] < 250 and pos[0] < 250):
+                valid_click = 1
                 grid[row][column] = 1
+                last_column = column
+                last_row = row
+            else:
+                valid_click = 0
             print("Click ", pos, "Grid coordinates: ", row, column)
  
     screen.fill(BLACK)
-
-    for row in range(10):
-        for column in range(10):
-            color = WHITE
-            pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
-            pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
-            if grid[row][column] == 1:
-                color = GREEN
+    if valid_click == 1:
+        for row in range(10):
+            for column in range(10):
+                color = WHITE
                 pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
-            elif grid2[row][column] == 1:
-                color = GREEN
                 pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
-            pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
+                if grid[row][column] == 1:
+                    color = GREEN
+                    pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
+                elif grid2[row][column] == 1:
+                    color = GREEN
+                    pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
+                pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
+    else:
+        for last_row in range(10):
+            for last_column in range(10):
+                color = WHITE
+                pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN,WIDTH, HEIGHT])
+                pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN+ 300,WIDTH, HEIGHT])
+                if grid[last_row][last_column] == 1:
+                    color = GREEN
+                    pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN,WIDTH, HEIGHT])
+                elif grid2[last_row][last_column] == 1:
+                    color = GREEN
+                    pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN+ 300,WIDTH, HEIGHT])
+                pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)        
+        
         
     # Limit to 60 frames per second
     time = pygame.time.get_ticks
@@ -91,10 +116,7 @@ while not done:
     text = font.render(outputs, True, WHITE)
     screen.blit(text, [250, 250])
  
-    if (lasttime != seconds):
-        print(totalseconds)
-        print(minutes)
-        lasttime = seconds
+ 
     clock.tick(60)
 
 
