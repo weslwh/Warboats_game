@@ -11,7 +11,7 @@ where only one can win.
   Feel free to download and use our work however you please.
 
 **How to install**:
-  To install the game, simple clone the Warboats repository. To play them game, the Pygame library is required. Since the game is written in Python, no compilation is requred on behalf of the user, simply run 'main.py' and a window will appear for the game.
+  To install the game, simply clone the Warboats repository. Since the game is written in Python, no compilation is requred on behalf of the user, just run 'main.py' and a window will appear for the game. Note that Warboats makes use of the Pygame library, so it will need to be installed in order to play the game.
 
 **How to play**:
   Warboats is a game consisting of two players: You and the computer. The game takes place on a 10 by 10 grid board, where the player can click on any of those grid spaces. At the start of the game you must place a set of ships onto the board, where the location of the ships will be hidden from the computer. The computer will do the same, and your goal is to find where all the computers ships are hidden.
