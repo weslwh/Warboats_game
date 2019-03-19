@@ -1,73 +1,96 @@
 import pygame
+import sys
+import time
 from math import pi
+
+# Initialize pygame
 pygame.init()
 
-# Define the colors we will use in RGB format
-BLACK = (  0,   0,   0)
-WHITE = (255, 255, 255)
-BLUE =  (  0,   0, 255)
-GREEN = (  0, 255,   0)
-RED =   (255,   0,   0)
+# Define colors
+RED = (255,0,0)
+BLACK = (0,0,0)
+WHITE = (255,255,255)
 
-#set size
-size = [1000,1000]
+# width and height of each grid and gap bewteen each grid
+width = 25
+height = 25
+gap = 5
 
-# set up size for screen
-screen = pygame.display.set_mode(size) 
-pygame.display.set_caption("War boat")  # set up name
+# total width and total height
+total_width = 250
+total_height = 250
 
-x = 350
-y = 0
-width = 350
-height =350
-vel = 5
+# make a 10*10 grids
+# initialize original position to be 0, if no ship there.
+grid = []
+for x in range(0,10):
+    grid.append([])
+    for y in range(0,10):
+        grid[x].append(0)
 
-#Loop until the user clicks the close button.
-done = False
+#  Initialize the screen size 
+Screen_width = 1000
+Screen_height = 1000
+# Make the screen
+Screen = pygame.display.set_mode([Screen_width,Screen_height])
+
+# Set title name
+pygame.display.set_caption("Warboats")
+guess_coordinate = []
+color = WHITE
+### guess board
+##for x in range(0,10):
+##    for y in range(0,10):
+##        pygame.draw.rect(Screen,color, [(width+gap)*x+gap,(height+gap)*y+gap,width,height])
+##
+
+# guess board
+for x in range(0,10):
+    for y in range(0,10):
+        pygame.draw.rect(Screen,color, [(width+gap)*x+gap,(height+gap)*y+gap,width,height])
+# place ship board
+for x in range(0,10):
+    for y in range(0,10):
+        pygame.draw.rect(Screen,color, [(width+gap)*x+gap,(height+gap)*y+gap+350,width,height])
+
+
+# Close the screen
+Exit = False
 clock = pygame.time.Clock()
-
-while not done:
-    # This limits the while loop to a max of 10 times per second.
-    # Leave this out and we will use all CPU we can.
+while not Exit:
     clock.tick(10)
-    
+
     for event in pygame.event.get():  #user do something
         if event.type == pygame.QUIT: # if user click close
-            done = True
-            
-    # Clear the screen and set the screen background
-    screen.fill(WHITE)
+            pygame.quit() # quit pygame 
+            sys.exit() # system exit
+            Exit = True
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            p_x,p_y = pygame.mouse.get_pos() # get the position of x coordinate ,y coordinate
+            if p_x <=300 and p_y <=300: # limit the guess board
+                x_value = p_x//((height+gap)) # 
+                y_value = p_y//((height+gap))
+                guess_coordinate.append((x_value+1,y_value+1)) # add all guess_coordinate as tuple into guess_coordinate list
+            print(guess_coordinate)
 
-    # Player screen
-    pygame.draw.rect(screen, BLACK, [x, y, width, height], 2)
-    # Vertical line for player
-    for i in range(1,10):
-        pygame.draw.line(screen, BLACK, [x+35*i,y], [x+35*i,height], 2)
-    # Horizontal line for player
-    for j in range(1,10):
-        pygame.draw.line(screen, BLACK, [x,y+35*j], [x+350,y+35*j], 2)
+                
 
-    # Computer screen
-    pygame.draw.rect(screen, BLACK, [x, y+450, width, height], 2)
 
-    # Vertical line for computer
-    for i in range(1,10):
-        pygame.draw.line(screen, BLACK, [x+35*i,y+450], [x+35*i,height+450], 2)
-    # Horizontal line for computer
-    for j in range(1,10):
-        pygame.draw.line(screen, BLACK, [x,y+450+35*j], [x+350,y+450+35*j], 2)
-    
-    # input the coordinates to board
-    Text = ["A","B","C","D","E","F","G","H","I","J"]
-    myfont = pygame.font.SysFont('Comic Sans MS', 40)
-    textsurface = myfont.render(Text[0], False, (0, 0, 0))
-    screen.blit(textsurface,(325,0))
 
-    myfont = pygame.font.SysFont('Comic Sans MS', 40)
-    textsurface = myfont.render(Text[1], False, (0, 0, 0))
-    screen.blit(textsurface,(325,35))
-    
+
+    # update screen to get the draw 
     pygame.display.flip()
 pygame.quit()
 
 
+
+
+
+
+
+
+
+
+
+        
+            
