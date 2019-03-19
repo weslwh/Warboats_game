@@ -1,26 +1,31 @@
 # Warboats_game
-
-
-Warboats is a game based off of the classic Battleship game. Two players are pitted together in intense naval combat, where only one can win. Using tatical thinking and a hint of luck, will you be the winner?
+  Warboats is a game inspired by the classic Battleship game. Two players are pitted together in intense naval combat, where only one can win. Using tactical thinking and a bit of luck, will you win against the computer?
 
 ### Details:
+  Warboats is coded in Python and makes use of the Pygame library. The application architectrue is similar to the MVC design pattern. The Warboats repository was completed as part of an assignment for a university course. 
 
-  Warboats is coded using pythons pygame library, using a MVC design pattern. Project completed for CSC290 at the University of Toronto Mississauga, 2019. Team members: Genrikh Askaryan, Arnaud Michel, James Hau, Kai Li, and Weihao Liao.
+Team members: Genrikh Askaryan, Arnaud Michel, James Hau, Kai Li, and Weihao Liao.
   
-  Feel free to download and use our work however you please.
+Feel free to download and use our work however you please.
 
 ### How to install:
-  To install the game, simply clone the Warboats repository. Since the game is written in Python, no compilation is requred on behalf of the user, just run 'main.py' and a window will appear for the game. Note that Warboats makes use of the Pygame library, so it will need to be installed in order to play the game.
+  To install the game, simply clone the Warboats repository to the desired location on your system. No compilation of source code is required on behalf of the user since Warboats is written in Python. Note that the Pygame library is a dependency of the Warboats application so it will need to be installed on the user's system for Warboats to function properly.
+
+### Controls of the Game:
+  Use the mouse cursor and click on spaces in your grid to place your ships. Click on spaces of the computers board to guess where the computer's ships are. Clicking on the close button for the window exits the game.
 
 ### How to play:
-  Warboats is a game consisting of two players: You and the computer. The game takes place on two 10 by 10 grid boards, where each player guesses positions on their opponents board. At the start of the game you must place a set of ships onto the board, where the location of the ships will be hidden from the computer. The computer will do the same, and your goal is to find where all the computers ships are hidden by guessing the correct coordinates.
+  Warboats is a game consisting of two players: you and the computer. The game takes place on two 10 by 10 grid boards. The grids at the bottom and top of the application window are the player's and computer's boards respectively. Players will take turns guessing positions on their opponent's board. During the 'placing' phase at the start of the game, you must place you set of ships by clicking on the desired positions on your board. The computer will do the same for its ships and respective board. When both players have placed their ships, the 'placing' phase is over and the battle begins.
   
-  The game is turn-based and the player is allowed to have the first guess, then the game will let the computer guess on the player's board. After that, the player gets to guess again. This repeats until either the player or computer have sunk all of their opponent's ships. The side that succeeds in sinking all of their opponent's ships wins the game. 
-
-  The game is to be played using the mouse cursur after starting the application (main.py). The grid board at the top of the window is the computer's board, the one closer to the bottom is the player's board. The player guesses on the computer's board by clicking on one of the boxes on the computer's board. Warboats signifies 'hits' and 'misses' as red and blue boxes respectively. When the game is over, a message is displayed that states the winner of the game.
+  The game is turn-based and the player is allowed to have the first guess. To guess a position on the computer's board, click on the part of the grid that you think a computer's ship may be, the guessed position is then recoloured red for 'hit' or blue for 'miss'. After the player guesses, the computer will guess against the player, then it is the player's turn again, and so on. Players will continue to take turns guessing against each other until either the player or computer have sunk all of their opponent's ships. The side that succeeds in sinking all of their opponent's ships wins the game. Once the game has ended, a message is displayed stating the winner.
 
 ### Screenshots
 
+screenshot 1 placeholder
+
+screenshot 2 placeholder
+
+screenshot 3 placeholder
 
 ### License
   GNU general public licence version 3, 29 June 2007
