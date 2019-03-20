@@ -19,11 +19,17 @@ class Grid:
 			y_pos += Constants.LENGTH
 
 
+	def initialize(self):
+		self.draw_grid()
+		self.draw_horizontal_indices()
+		self.draw_vertical_indices()
+	
 	def draw_grid(self):
 		for obj in self.square_lst:
 			obj.draw_square()
-			
-	def draw_index(self):
+	
+	
+	def draw_horizontal_indices(self):
 		import View
 		import pygame
 		pygame.init()
@@ -32,23 +38,33 @@ class Grid:
 		font = pygame.font.SysFont("arial", 25)
 		
 		# make local variables for horizontal indices
-		h1_pos = self.x_pos + 9
-		v1_pos = self.y_pos - 35
+		x_pos = self.x_pos + 9
+		y_pos = self.y_pos - 35
 		
 		# render text
 		for letter in "ABCDEFGHIJ":
 			label = font.render(letter, 1, (0, 0, 128))
-			View.screen.blit(label, (h1_pos, v1_pos))
+			View.screen.blit(label, (x_pos, y_pos))
 			pygame.display.flip()
-			h1_pos += Constants.LENGTH
-			
+			x_pos += Constants.LENGTH
+		
+	def draw_vertical_indices(self):
+		import View
+		import pygame
+		pygame.init()
+		
+		# set the font of the letters
+		font = pygame.font.SysFont("arial", 25)	
+		
 		# make local variables for vertical indices
-		h2_pos = self.x_pos - 30
-		v2_pos = self.y_pos + 3
+		x_pos = self.x_pos - 30
+		y_pos = self.y_pos + 3
 			
 		# render text
 		for num in range(1, 11):
 			label = font.render(str(num), 1, (0, 0, 128))
-			View.screen.blit(label, (h2_pos, v2_pos))
+			View.screen.blit(label, (x_pos, y_pos))
 			pygame.display.flip()
-			v2_pos += Constants.LENGTH
+			y_pos += Constants.LENGTH
+	
+	
