@@ -8,7 +8,7 @@ pygame.init()
 screen = pygame.display.set_mode(Constants.SCREEN_SIZE)
 screen.fill(Constants.PALE_TURQUOISE)
 pygame.display.set_caption(Constants.CAPTION)
-
+clock = pygame.time.Clock()
 
 # initialize the coordinates
 player_grid = Grid.Grid(100, 100)
@@ -18,7 +18,7 @@ oppo_grid = Grid.Grid(600, 100)
 oppo_grid.initialize()
 
 pygame.display.flip()
-
+pygame.font.init()
 #initializes variables
 pos = [0,0]
 grid = [[0,0],[0,0]]
@@ -35,6 +35,60 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 KHAKI = (240, 230, 140)
 PALE_TURQUOISE = (175, 238, 238)
+
+
+
+#get the textready
+font = pygame.font.SysFont('Comic Sans MS', 30)
+text = font.render('Welcome to Warboats!', False,Constants.BLUE)
+font2 = pygame.font.SysFont('Comic Sans MS', 15)
+text2 = font2.render('Press C to continue, or Q to quit', False, Constants.BLUE)
+
+start = False
+while not start:
+	screen.fill(Constants.WHITE)
+	screen.blit(text, (350,200))
+	screen.blit(text2, (380, 250))
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			start = True
+			pygame.quit()
+			quit()
+		if event.type == pygame.KEYDOWN:		
+			if event.key == pygame.K_q:
+				start = True
+				pygame.quit()
+				quit()
+			if event.key == pygame.K_c:
+				start = True
+				print(start)
+				
+
+	if start == True:
+		print("here")
+		
+	pygame.display.update()
+
+	clock.tick(30)
+	pygame.display.flip()
+	
+	
+
+pygame.display.update()
+print("I GOT HERE")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # while-loop logic
 #Still need to properly transfer the code from other View.py and update it to this version
