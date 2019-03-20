@@ -54,6 +54,9 @@ for x in range(0,10):
         pygame.draw.rect(Screen,color, [(width+gap)*x+gap,(height+gap)*y+gap+350,width,height])
 
 
+
+ship_c = [] 
+
 # Close the screen
 Exit = False
 clock = pygame.time.Clock()
@@ -70,8 +73,10 @@ while not Exit:
             if p_x <=300 and p_y <=300: # limit the guess board
                 x_value = p_x//((height+gap)) # 
                 y_value = p_y//((height+gap))
-                guess_coordinate.append((x_value+1,y_value+1)) # add all guess_coordinate as tuple into guess_coordinate list
-            print(guess_coordinate)
+                if not (x_value+1,y_value+1) in guess_coordinate:
+                    guess_coordinate.append((x_value+1,y_value+1)) # add all guess_coordinate as tuple into guess_coordinate list
+                print(guess_coordinate)
+
 
                 
 
