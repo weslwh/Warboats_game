@@ -24,3 +24,6 @@ while not Constants.GAME_OVER:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			Constants.GAME_OVER = True
+
+
+pygame.quit()
