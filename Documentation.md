@@ -9,14 +9,14 @@ Note: all classes and functions have docstrings explaining their behaviour, so w
 
 #### Classes
 
-**Board** - Represents the playing field of the Warboats game.
-**Coordinate** - Represents a postion in the Warboats game.
-**GameEngine** - Manages game logic and rules.
-**main** - the file that runs the application.
-**Player** - Represents the player entities in the Warboats game.
-**Ship** - Represents the units in the Warboats game.
-**ShipFactory** - builds ships for the Warboats game.
-**View** - the gui presented to the user.
+- **Board** - Represents the playing field of the Warboats game.
+- **Coordinate** - Represents a postion in the Warboats game.
+- **GameEngine** - Manages game logic and rules.
+- **main** - the file that runs the application.
+- **Player** - Represents the player entities in the Warboats game.
+- **Ship** - Represents the units in the Warboats game.
+- **ShipFactory** - builds ships for the Warboats game.
+- **View** - the gui presented to the user.
 
 ## Extending the Game
 
