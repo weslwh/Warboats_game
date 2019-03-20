@@ -22,12 +22,12 @@ sq1.draw_square()
 
 # initialize the coordinates
 player_grid = Grid.Grid(100, 100)
-for obj in player_grid.square_lst:
-	obj.draw_square()
+player_grid.draw_grid()
+player_grid.draw_index()
 
 oppo_grid = Grid.Grid(600, 100)
-for obj in oppo_grid.square_lst:
-	obj.draw_square()
+oppo_grid.draw_grid()
+oppo_grid.draw_index()
 	
 pygame.display.flip()
 
