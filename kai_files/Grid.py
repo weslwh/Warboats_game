@@ -48,6 +48,8 @@ class Grid:
 			pygame.display.flip()
 			x_pos += Constants.LENGTH
 		
+		
+	
 	def draw_vertical_indices(self):
 		import View
 		import pygame
