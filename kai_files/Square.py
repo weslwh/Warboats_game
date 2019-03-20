@@ -15,21 +15,15 @@ class Square:
 		
 		
 	def draw_square(self):
-		import View # this import has to be in the function, not on top
-		# draw the four sides of a square
-		pygame.draw.line(View.screen, Constants.BLACK, # Surface, Color
-		                 (self.x_pos, self.y_pos), # start point
-		                 (self.x_pos + Constants.LENGTH, self.y_pos), # end point
-		                 Constants.LINE_WIDTH) # line width = 1
-		pygame.draw.line(View.screen, Constants.BLACK,
-			         (self.x_pos, self.y_pos),
-		                 (self.x_pos, self.y_pos + Constants.LENGTH),
-			         Constants.LINE_WIDTH)
-		pygame.draw.line(View.screen, Constants.BLACK,
-			        (self.x_pos + Constants.LENGTH, self.y_pos),
-		                (self.x_pos + Constants.LENGTH, self.y_pos + Constants.LENGTH),
-		                Constants.LINE_WIDTH)
-		pygame.draw.line(View.screen, Constants.BLACK,
-		                (self.x_pos, self.y_pos + Constants.LENGTH),
-		                (self.x_pos + Constants.LENGTH, self.y_pos + Constants.LENGTH),
-		                Constants.LINE_WIDTH)	
+		import View
+		
+		pygame.draw.rect(View.screen, Constants.BLACK, (self.x_pos, self.y_pos,
+		                Constants.LENGTH, Constants.LENGTH), Constants.LINE_WIDTH)
+		
+	def fill_square(self):
+		import View
+		
+		pygame.draw.rect(View.screen, Constants.KHAKI, (self.x_pos + 2, self.y_pos + 2,
+			        Constants.LENGTH - 4, Constants.LENGTH - 4), 0)		
+		
+		pygame.display.update()

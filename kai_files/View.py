@@ -29,7 +29,12 @@ while not Constants.GAME_OVER:
             Constants.GAME_OVER = True
         if event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
+            
+            # Simply prints messages, modifications expected.
             Game_Engine.get_click_info(x, y)
+            
+            # Fill the square
+            Game_Engine.fill_square(x, y)
 
 
 pygame.quit()

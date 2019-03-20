@@ -34,5 +34,22 @@ def get_click_info(x, y):
         print("Click on the opponent's grid. Coordinate ",
               check_oppo_coor(x, y))   
 
-
+def fill_square(x, y):
+    import View
+    
+    # Click on the player's grid
+    if check_on_board(x, y) == 1:
+        sq_idt = check_player_coor(x, y)
+        for obj in View.player_grid.square_lst:
+            if sq_idt == obj.idt:
+                # fill the square
+                obj.fill_square()
+                
+    # Click on the opponent's grid
+    if check_on_board(x, y) == 2:
+        sq_idt = check_oppo_coor(x, y)
+        for obj in View.oppo_grid.square_lst:
+            if sq_idt == obj.idt:
+                # fill the square
+                obj.fill_square()        
 
