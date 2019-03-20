@@ -21,12 +21,20 @@ pygame.display.flip()
 
 #initializes variables
 pos = [0,0]
-grid = [[0],[0]]
+grid = [[0,0],[0,0]]
 grid2 = [[0,0],[0,0]]
 row = 0
 column = 0
 HEIGHT = 30
+WIDTH = 30
 MARGIN = 3
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+BLUE = (0, 0, 128)
+GREEN = (0, 255, 0)
+RED = (255, 0, 0)
+KHAKI = (240, 230, 140)
+PALE_TURQUOISE = (175, 238, 238)
 
 # while-loop logic
 #Still need to properly transfer the code from other View.py and update it to this version
@@ -35,6 +43,7 @@ while not Constants.GAME_OVER:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                     Constants.GAME_OVER = True
+                    pygame.quit()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
