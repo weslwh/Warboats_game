@@ -22,3 +22,17 @@ def check_oppo_coor(x, y):
     y_index = (y - 100) // Constants.LENGTH
     return (Constants.LETTER_INDICES[x_index], 
             Constants.NUMBER_INDICES[y_index])
+
+def get_click_info(x, y):
+    mesg = check_on_board(x, y)
+    if mesg == 0:
+        print("invalid position")
+    elif mesg == 1:
+        print("Click on the player's grid. Coordinate ",
+              check_player_coor(x, y))
+    elif mesg == 2:
+        print("Click on the opponent's grid. Coordinate ",
+              check_oppo_coor(x, y))   
+
+
+
