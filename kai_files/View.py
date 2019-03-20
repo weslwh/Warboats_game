@@ -22,14 +22,16 @@ pygame.display.flip()
 #initializes variables
 pos = [0,0]
 grid = [[0],[0]]
-grid2 = [[0],[0]]
+grid2 = [[0,0],[0,0]]
 row = 0
 column = 0
 HEIGHT = 30
 MARGIN = 3
 
 # while-loop logic
+#Still need to properly transfer the code from other View.py and update it to this version
 while not Constants.GAME_OVER:
+        valid_click=0
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                     Constants.GAME_OVER = True
@@ -55,6 +57,34 @@ while not Constants.GAME_OVER:
                 else:
                     valid_click = 0
                 print("Click ", pos, "Grid coordinates: ", row, column)
-			                
+
+        screen.fill(BLACK) #May not need this
+        if valid_click == 1:
+            for row in range(10):
+                for column in range(10):
+                    color = WHITE
+                    pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
+                    pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
+                    if grid[row][column] == 1:
+                        color = GREEN
+                        pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN,WIDTH, HEIGHT])
+                    elif grid2[row][column] == 1:
+                        color = GREEN
+                        pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * column + MARGIN, (MARGIN + HEIGHT) * row + MARGIN+ 300,WIDTH, HEIGHT])
+                    pygame.draw.rect(screen, RED, (0,252, 250, 50), 0)
+
+        else:
+            for last_row in range(10):
+                for last_column in range(10):
+                    color = WHITE
+                    pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN,WIDTH, HEIGHT])
+                    pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN+ 300,WIDTH, HEIGHT])
+                    if grid[last_row][last_column] == 1:
+                        color = GREEN
+                        pygame.draw.rect(screen,color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN,WIDTH, HEIGHT])
+                    elif grid2[last_row][last_column] == 1:
+                        color = GREEN
+                        pygame.draw.rect(screen, color, [(MARGIN + WIDTH) * last_column + MARGIN, (MARGIN + HEIGHT) * last_row + MARGIN+ 300,WIDTH, HEIGHT])
+                    pygame.draw.rect(screen, RED, (0,252, 250, 50), 0) 
                         
 pygame.quit()
