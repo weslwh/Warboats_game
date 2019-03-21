@@ -21,7 +21,8 @@ Feel free to download and use our work however you please.
 
 ### Screenshots
 
-screenshot 1 placeholder
+![Alt text](/screenshots/1.jpg?raw=true)
+
 
 screenshot 2 placeholder
 
