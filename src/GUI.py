@@ -2,6 +2,9 @@ import pygame
 import sys
 import time
 from math import pi
+import Coordinate
+import ShipFactory
+
 
 # Initialize pygame
 pygame.init()
@@ -78,11 +81,7 @@ while not Exit:
                 print(guess_coordinate)
 
 
-                
-
-
-
-
+        
     # update screen to get the draw 
     pygame.display.flip()
 pygame.quit()

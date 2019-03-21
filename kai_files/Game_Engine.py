@@ -1,5 +1,7 @@
 import Constants
+import pygame
 import time
+
 
 
 def check_on_board(x, y):
@@ -191,7 +193,13 @@ def start():
 
                     # Check winners
                     if View.oppo_grid.ship_lst == []:
-                        print("User wins !")
+                        import pygame
+                        pygame.init()
+                        font = pygame.font.SysFont("arial", 72)
+                        text_surface = font.render("Congratulations!! Player Win!!", True,(255,0,0))
+                        View.screen.fill(Constants.WHITE)
+                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
+                        pygame.display.update()
                         # pops a window up then exit the pygame
 
                     if View.player_grid.ship_lst == []:
@@ -212,7 +220,12 @@ def start():
                         obj.fill_square_as_miss()
 
                     if View.player_grid.ship_lst == []:
-                        print("Computer wins !")
+                        import pygame
+                        pygame.init()
+                        font = pygame.font.SysFont("arial", 72)
+                        text_surface = font.render("Gameover Computer Win!!", True,(255,0,0))
+                        View.screen.fill(Constants.WHITE)
+                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
                         # pops a window up then exit the pygame
 
-                '''
+
