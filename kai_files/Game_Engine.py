@@ -1,5 +1,5 @@
 import Constants
-
+import time
 
 
 def check_on_board(x, y):
@@ -163,17 +163,31 @@ def start():
                                             View.oppo_grid.ship_lst.remove(sq.idt)
                                     else:
                                         sq.fill_square_as_miss();
+                    # Delay gord here
+                    time.sleep(2)
+                    
+                    # get a random square object from player's grid
+                    obj = get_rand_square(View.player_grid.square_lst)
+                    if obj.is_ship == True:
+                        obj.fill_square_as_hit()
+                    else:
+                        obj.fill_square_as_miss()
 
+
+                    # Check winners
                     if View.oppo_grid.ship_lst == []:
                         print("User wins !")
                         # pops a window up then exit the pygame
 
-
+                    if View.player_grid.ship_lst == []:
+                        print("Computer wins !")
+                        # pops a window up then exit the pygame
+                        
                     else:
                         # for later message instructions
-                        mesg = "Invalid position. Please click on the opponent's grid"
+                         mesg = "Invalid position. Please click on the opponent's grid"
 
-
+                '''
                 elif event.type == pygame.KEYDOWN: # press any key to shift to computer's turn
                     # get a random square object from player's grid
                     obj = get_rand_square(View.player_grid.square_lst)
@@ -186,5 +200,4 @@ def start():
                         print("Computer wins !")
                         # pops a window up then exit the pygame
 
-
-    pygame.quit()
+                '''
