@@ -15,11 +15,13 @@ text = font.render('Welcome to Warboats!', False,Constants.BLUE)
 font2 = pygame.font.SysFont('Comic Sans MS', 15)
 text2 = font2.render('Press C to continue, or Q to quit', False, Constants.BLUE)
 
+#Loop for the start screen
 start = False
 while not start:
 	screen.fill(Constants.WHITE)
 	screen.blit(text, (350,200))
 	screen.blit(text2, (380, 250))
+	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			start = True

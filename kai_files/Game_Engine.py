@@ -107,16 +107,19 @@ def get_rand_square(lst):
     # remove the number so that the computer won't select same objects
     num_lst.remove(rand_num)
     return lst[rand_num]
-
-
-
+pygame.init()
+enemy_font = pygame.font.SysFont('Comic Sans MS', 30)
+enemy_text = enemy_font.render('Enemy', False,Constants.BLACK)
+player_font = pygame.font.SysFont('Comic Sans MS', 30)
+player_text = player_font.render('Friendly', False, Constants.BLACK)
 def start():
     import View
     import Grid
     import pygame
     pygame.init()
-
-
+    View.screen.blit(player_text, (200, 20))
+    View.screen.blit(enemy_text, (670,20))
+    pygame.display.update()
     while not Constants.USER_QUIT:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -196,7 +199,7 @@ def start():
                         import pygame
                         pygame.init()
                         font = pygame.font.SysFont("arial", 72)
-                        text_surface = font.render("Congratulations!! Player Win!!", True,(255,0,0))
+                        text_surface = font.render("Congratulations!! You Win!!", True,(255,0,0))
                         View.screen.fill(Constants.WHITE)
                         View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
                         pygame.display.update()
@@ -206,7 +209,7 @@ def start():
                         import pygame
                         pygame.init()
                         font = pygame.font.SysFont("arial", 72)
-                        text_surface = font.render("Game Over!! Computer Win!!", True,(255,0,0))
+                        text_surface = font.render("Game Over!! Computer Wins!!", True,(255,0,0))
                         View.screen.fill(Constants.WHITE)
                         View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
                         pygame.display.update()
