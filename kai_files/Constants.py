@@ -18,7 +18,7 @@ LIGHT_GREEN = (144,238,144)
 
 LENGTH = 30;
 LINE_WIDTH = 3;
-CAPTION = "Battleship"
+CAPTION = "Warboats"
 GAME_OVER = False
 USER_QUIT = False
 
