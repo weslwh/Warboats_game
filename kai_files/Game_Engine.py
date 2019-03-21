@@ -1,9 +1,25 @@
 import Constants
 import pygame
+import time
 
 
 
 def check_on_board(x, y):
+    '''
+    check_on_board() returns a number 1,2, or 0 based on whether the
+    values of x and y are in a specific range
+
+    Args:
+        x: A int from 100 to 900
+
+        y: A int from 100 to 400
+        
+        Returns:
+            int 1, 2, or 0
+        
+        Raises:
+            void
+    '''
     if y >= 100 and y <= 400:
         # 1 represents player's grid
         if x >= 100 and x <= 400:
@@ -140,7 +156,9 @@ def start():
 
                     # show opponent's ships for test uses
                     # later deletion needed
-                    View.oppo_grid.fill_ship_squares()
+
+                    #View.oppo_grid.fill_ship_squares()
+
 
             else: # SHIP_DEPLOYED = True, guessing starts
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -162,7 +180,18 @@ def start():
                                             View.oppo_grid.ship_lst.remove(sq.idt)
                                     else:
                                         sq.fill_square_as_miss();
+                    # Delay gord here
+                    time.sleep(2)
+                    
+                    # get a random square object from player's grid
+                    obj = get_rand_square(View.player_grid.square_lst)
+                    if obj.is_ship == True:
+                        obj.fill_square_as_hit()
+                    else:
+                        obj.fill_square_as_miss()
 
+
+                    # Check winners
                     if View.oppo_grid.ship_lst == []:
                         import pygame
                         pygame.init()
@@ -173,12 +202,15 @@ def start():
                         pygame.display.update()
                         # pops a window up then exit the pygame
 
-
+                    if View.player_grid.ship_lst == []:
+                        print("Computer wins !")
+                        # pops a window up then exit the pygame
+                        
                     else:
                         # for later message instructions
-                        mesg = "Invalid position. Please click on the opponent's grid"
+                         mesg = "Invalid position. Please click on the opponent's grid"
 
-
+                '''
                 elif event.type == pygame.KEYDOWN: # press any key to shift to computer's turn
                     # get a random square object from player's grid
                     obj = get_rand_square(View.player_grid.square_lst)
@@ -195,7 +227,5 @@ def start():
                         View.screen.fill(Constants.WHITE)
                         View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
                         # pops a window up then exit the pygame
-
-
 
 
