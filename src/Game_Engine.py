@@ -160,7 +160,7 @@ def start():
                     # show opponent's ships for test uses
                     # later deletion needed
 
-                    View.oppo_grid.fill_ship_squares()
+                    #View.oppo_grid.fill_ship_squares()
 
 
             else: # SHIP_DEPLOYED = True, guessing starts
@@ -184,7 +184,7 @@ def start():
                                     else:
                                         sq.fill_square_as_miss();
                     # Delay gord here
-                    time.sleep(2)
+                    time.sleep(1)
                     
                     # get a random square object from player's grid
                     obj = get_rand_square(View.player_grid.square_lst)
