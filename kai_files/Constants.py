@@ -9,6 +9,7 @@ SCREEN_SIZE = (1000, 500)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BLUE = (0, 0, 128)
+RED = (255,0,0)
 KHAKI = (240,230,140)
 PALE_TURQUOISE = (175,238,238)
 SILVER = (192,192,192)
@@ -25,5 +26,8 @@ LETTER_INDICES = 'ABCDEFGHIJ'
 NUMBER_INDICES = list(range(1, 11))
 
 SHIP_DEPLOYED = False
+
+
+
 
 # python labels: https://www.youtube.com/watch?v=G933SOLWbbg

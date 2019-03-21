@@ -1,6 +1,11 @@
-import Coordinate.py
-
-class Ship:
+import pygame
+import Constants
+import Square
+import Grid
+import Game_Engine
+pygame.init()
+class Ship(pygame.sprite.Sprite):
+    
     """
     Represents a ship object, which has a list of Coordinates that 
     represent it's position and a Boolean 'sunk' attribute representing
@@ -14,7 +19,12 @@ class Ship:
         is_sunk(self)
     """
     
-    def __init__(self):
+    def __init__(self, x_pos, y_pos, ship_size):
+        pygame.sprite.Sprite.__init__(self)
+        self.x_pos = x_pos
+        self.y_pos = y_pos
+        self.ship_size = ship_size
+        
         """
         Initializes a ship object with no coordinates.
         
@@ -46,7 +56,9 @@ class Ship:
         Raises:
             void
         """
-        return self.position
+         
+
+    
     
       
     def guess_position(self, pos):

@@ -16,7 +16,6 @@ pygame.display.set_caption(Constants.CAPTION)
 
 
 
-
 # initialize the two coordinates and index
 player_grid = Grid.Grid(100, 100) # create a View object
 player_grid.initialize() # create a View object
