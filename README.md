@@ -19,6 +19,7 @@ Authors: Genrikh Askaryan, Arnaud Michel, James Hau, Kai Li, and Weihao Liao.
 
 ### Screenshots
 
+![Alt text](/screenshots/3.jpg?raw=true)
 ![Alt text](/screenshots/1.jpg?raw=true)
 ![Alt text](/screenshots/2.jpg?raw=true)
 
