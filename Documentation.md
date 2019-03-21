@@ -11,19 +11,35 @@ Note: all classes and functions have docstrings explaining their behaviour, so w
 #### Classes
 
 - **Board** - Represents the playing field of the Warboats game.
-- **Coordinate** - Represents a postion in the Warboats game.
   - **is_valid_coordinate(...)** - checks if a coordinate is valid in the board.
   - **add_hits(...)** - add a hit to the board.
   - **add_miss(...)** - add a miss to the board.
   - **get_hits()** - get the hits of the board.
   - **get_misses()** - get the misses of the board.
   - **guess_coordinate(...)** - guess a coordinate and update the board.
+- **Coordinate** - Represents a postion in the Warboats game.
+  - **get_letter()** - return the lettervalue  of a coordinate.
+  - **get_number()** - return the number value of a coordinate.
+  - **get_tuple()** - return a tuple representation of a coordinate.
 - **GameEngine** - Manages game logic and rules.
-- **main** - the file that runs the application.
+  - **game_won()** - returns ```True``` if the game is won.
+  - **players_still_playing()** - return a list of players still active in the game.
+  - **update_game_won()** - updates the win status of the game.
+  - **guess_position(...)** - guesses a position against a player.
+  - **init_player(...)** - initializes a player and their ships.
 - **Player** - Represents the player entities in the Warboats game.
+  - **add_ships(...)** - add ships to a player.
+  - **get_ships()** - return a list of ships that the player has.
+  - **guess_position(...)** - returns ```True``` if a player has a ship at the coordinate.
+  - **still_has_ships()** - return ```True``` if the player still has ships.
 - **Ship** - Represents the units in the Warboats game.
+  - **get_ship_coordinates()** - return the list of coordinates for this ship.
+  - **guess_position(...)** - guess a position against this ship.
+  - **set_ship_coordinates(...)** - set the coordinates of a ship.
+  - **is_sunk()** - return ```True``` if the ship is sunk.
 - **ShipFactory** - builds ships for the Warboats game.
-- **View** - the gui presented to the user.
+  - **build(...)** - build a ship with coordinates and a type.
+- **View** - The application starting point. Also presents the gui to the user.
 
 ## Extending the Game
 
