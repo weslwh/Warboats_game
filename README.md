@@ -26,3 +26,5 @@ Authors: Genrikh Askaryan, Arnaud Michel, James Hau, Kai Li, and Weihao Liao.
 ### License
   GNU general public licence version 3, 29 June 2007
 © Copyright 2019, Warboats Team
+### Music Credit:
+http://freemusicarchive.org/music/Lobo_Loco/HEADCRASH/Experimental_Gameplay_ID_953
