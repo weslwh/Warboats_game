@@ -22,11 +22,7 @@ Feel free to download and use our work however you please.
 ### Screenshots
 
 ![Alt text](/screenshots/1.jpg?raw=true)
-
-
-screenshot 2 placeholder
-
-screenshot 3 placeholder
+![Alt text](/screenshots/2.jpg?raw=true)
 
 ### License
   GNU general public licence version 3, 29 June 2007
