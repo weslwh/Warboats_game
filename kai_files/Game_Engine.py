@@ -139,7 +139,7 @@ def start():
 
                     # show opponent's ships for test uses
                     # later deletion needed
-                    View.oppo_grid.fill_ship_squares()
+                    # View.oppo_grid.fill_ship_squares()
 
             else: # SHIP_DEPLOYED = True, guessing starts
                 if event.type == pygame.MOUSEBUTTONDOWN:
