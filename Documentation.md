@@ -1,8 +1,8 @@
 ## Directory Structure
 
-  The license, README, and documentation files are located in the root folder of the Warboats repository.
-  All source code for the Warboats game is located in the /src directory.
-  Screenshots of the game are located in the /screenshots directory.
+- The license, README, and documentation files are located in the root folder of the Warboats repository.
+- All source code for the Warboats game is located in the /src directory.
+- Screenshots of the game are located in the /screenshots directory.
 
 ## Classes and Functions
 
