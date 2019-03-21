@@ -12,6 +12,12 @@ Note: all classes and functions have docstrings explaining their behaviour, so w
 
 - **Board** - Represents the playing field of the Warboats game.
 - **Coordinate** - Represents a postion in the Warboats game.
+  - **is_valid_coordinate(...)** - checks if a coordinate is valid in the board.
+  - **add_hits(...)** - add a hit to the board.
+  - **add_miss(...)** - add a miss to the board.
+  - **get_hits()** - get the hits of the board.
+  - **get_misses()** - get the misses of the board.
+  - **guess_coordinate(...)** - guess a coordinate and update the board.
 - **GameEngine** - Manages game logic and rules.
 - **main** - the file that runs the application.
 - **Player** - Represents the player entities in the Warboats game.
