@@ -39,7 +39,13 @@ Note: all classes and functions have docstrings explaining their behaviour, so w
   - **is_sunk()** - return ```True``` if the ship is sunk.
 - **ShipFactory** - builds ships for the Warboats game.
   - **build(...)** - build a ship with coordinates and a type.
-- **View** - The application starting point. Also presents the gui to the user.
+
+####files
+
+- **View.py** - The application starting point. Also presents the gui to the user.
+- **Grid.py** - contains helper code for drawing the boards.
+- **Square.py** - contains helper code for drawing segments of the board.
+- **Game_Engine.py** - contains the logic for the game loop of the application.
 
 ## Extending the Game
 
