@@ -3,6 +3,21 @@ import time
 
 
 def check_on_board(x, y):
+    '''
+    check_on_board() returns a number 1,2, or 0 based on whether the
+    values of x and y are in a specific range
+
+    Args:
+        x: A int from 100 to 900
+
+        y: A int from 100 to 400
+        
+        Returns:
+            int 1, 2, or 0
+        
+        Raises:
+            void
+    '''
     if y >= 100 and y <= 400:
         # 1 represents player's grid
         if x >= 100 and x <= 400:
