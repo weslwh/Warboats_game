@@ -4,6 +4,7 @@ import Game_Engine
 import time
 
 import pygame
+pygame.mixer.pre_init(44100,16,2,4096)
 pygame.init() # initialize the pygame module
 
 
@@ -14,6 +15,12 @@ font = pygame.font.SysFont('Comic Sans MS', 30)
 text = font.render('Welcome to Warboats!', False,Constants.BLUE)
 font2 = pygame.font.SysFont('Comic Sans MS', 15)
 text2 = font2.render('Press C to continue, or Q to quit', False, Constants.BLUE)
+
+#Starts the music playing
+pygame.mixer.music.load("game_music.mp3")
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
+
 
 #Loop for the start screen
 start = False
