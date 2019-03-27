@@ -199,9 +199,9 @@ def start():
                         import pygame
                         pygame.init()
                         font = pygame.font.SysFont("arial", 72)
-                        text_surface = font.render("Congratulations!! You Win!!", True,(255,0,0))
+                        text_surface = font.render("Congratulations!! You Won!!", True,(255,0,0))
                         View.screen.fill(Constants.WHITE)
-                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
+                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/7,(Constants.SCREEN_SIZE[1])//2))
                         pygame.display.update()
                         # pops a window up then exit the pygame
 
@@ -209,9 +209,9 @@ def start():
                         import pygame
                         pygame.init()
                         font = pygame.font.SysFont("arial", 72)
-                        text_surface = font.render("Game Over!! Computer Wins!!", True,(255,0,0))
+                        text_surface = font.render("Game Over!! Computer Won!!", True,(255,0,0))
                         View.screen.fill(Constants.WHITE)
-                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/6,(Constants.SCREEN_SIZE[1])//2))
+                        View.screen.blit(text_surface,((Constants.SCREEN_SIZE[0])/7,(Constants.SCREEN_SIZE[1])//3))
                         pygame.display.update()
                         # pops a window up then exit the pygame
                         

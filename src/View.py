@@ -11,9 +11,9 @@ pygame.init() # initialize the pygame module
 #get the textready
 screen = pygame.display.set_mode(Constants.SCREEN_SIZE)
 clock = pygame.time.Clock()
-font = pygame.font.SysFont('Comic Sans MS', 30)
+font = pygame.font.SysFont('Comic Sans MS', 72)
 text = font.render('Welcome to Warboats!', False,Constants.BLUE)
-font2 = pygame.font.SysFont('Comic Sans MS', 15)
+font2 = pygame.font.SysFont('Comic Sans MS', 35)
 text2 = font2.render('Press C to continue, or Q to quit', False, Constants.BLUE)
 
 #Starts the music playing
@@ -26,8 +26,8 @@ pygame.mixer.music.play(-1)
 start = False
 while not start:
 	screen.fill(Constants.WHITE)
-	screen.blit(text, (350,200))
-	screen.blit(text2, (380, 250))
+	screen.blit(text, (270,200))
+	screen.blit(text2, (350, 250))
 	
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
